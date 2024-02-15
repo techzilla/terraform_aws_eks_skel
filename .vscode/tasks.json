@@ -1,0 +1,28 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "init",
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "dependsOrder": "sequence",
+            "dependsOn": ["init:vscode", "init:terraform" ]
+        },
+        {
+            "label": "init:vscode",
+            "type": "shell",
+            "command": "scripts/init_vscode.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "init:terraform",
+            "type": "shell",
+            "command": "scripts/init_terraform.sh",
+            "problemMatcher": []
+        }
+    ]
+}
